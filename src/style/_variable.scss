@@ -1,0 +1,29 @@
+/*Primary color*/
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$Dark-grey: hsl(0, 0%, 55%);
+$very-dark-grey: hsl(0, 0%, 41%);
+
+$large_screen: 900px;
+
+$medium_screen: 650px;
+
+$medium_screenl: 1200px;
+
+@mixin large {
+  @media (min-width: $large_screen) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (min-width: $medium_screen) {
+    @content;
+  }
+}
+
+@mixin lmedium {
+  @media (min-width: $medium_screenl) {
+    @content;
+  }
+}

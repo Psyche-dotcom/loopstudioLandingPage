@@ -1,0 +1,372 @@
+@import "./reset";
+@import "./variable";
+
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  width: fit-content;
+  color: $white;
+  border: 1px solid white;
+  padding: 0.5em;
+  margin: 50% 0;
+  transform: translateY(-50%);
+  @include medium {
+    font-size: clamp(2.5rem, 3.5vw, 5rem);
+    position: relative;
+    top: 30%;
+    transform: unset;
+    margin: unset;
+  }
+}
+h2 {
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 0.5em;
+  color: black;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: 300;
+}
+h4,
+li,
+button {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+li {
+  font-family: "Alata", sans-serif;
+}
+h4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+}
+P {
+  font-family: "Alata", sans-serif;
+  color: $Dark-grey;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  font-weight: 400;
+  line-height: 20px;
+  word-spacing: 5px;
+}
+img {
+  width: 100%;
+}
+.remove-width {
+  width: unset;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: white;
+      width: 30px;
+      height: 4px;
+      top: 30px;
+      left: 0%;
+      @include medium {
+        left: 25%;
+      }
+    }
+  }
+}
+.container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  @include medium {
+    width: 85%;
+  }
+  @include large {
+    width: 80%;
+  }
+  @include lmedium {
+    width: 75%;
+    max-width: 1200;
+  }
+}
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2em;
+}
+.logo {
+  z-index: 4;
+}
+.mobile-toggle {
+  z-index: 0;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  ul {
+    margin-top: 30%;
+  }
+  li {
+    color: white;
+    z-index: 1999;
+    margin-bottom: 3em;
+    text-transform: uppercase;
+  }
+}
+
+.hero {
+  background-image: url("../../public/images/mobile/image-hero.jpg");
+  background-position: left top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 5em;
+  position: relative;
+  z-index: 0;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 50%;
+  }
+
+  .container {
+    height: 80vh;
+    text-align: left;
+  }
+  @include medium {
+    background-image: url("../../public/images/desktop/image-hero.jpg");
+    background-size: 100% 100%;
+    ul {
+      display: flex;
+      gap: 1em;
+      li {
+        color: white;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: white;
+            width: 30px;
+            height: 4px;
+            top: 30px;
+            left: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+.firstsection {
+  margin-bottom: 5em;
+  img {
+    margin-bottom: 2.5em;
+  }
+  @include medium {
+    display: flex;
+    position: relative;
+    img {
+      margin-bottom: unset;
+      width: 70%;
+      @include large {
+        width: 65%;
+      }
+    }
+
+    article {
+      align-self: flex-end;
+      width: 45%;
+      position: absolute;
+      right: 30px;
+      background-color: white;
+      text-align: left;
+      padding-top: 1em;
+      padding-left: 1em;
+      h2 {
+        word-spacing: 5px;
+      }
+
+      @include medium {
+        padding-top: 2em;
+        padding-left: 2em;
+      }
+      @include large {
+        padding-top: 3em;
+        padding-left: 3em;
+        h2 {
+          margin-bottom: 1em;
+        }
+      }
+      @include lmedium {
+        padding-top: 8em;
+        padding-left: 8em;
+      }
+    }
+  }
+}
+.secondSection {
+  margin-bottom: 5em;
+  h2 {
+    margin-bottom: 2.5em;
+    letter-spacing: 5px;
+    @include medium {
+      margin-bottom: 0;
+    }
+  }
+  .img-gridItem {
+    position: relative;
+    z-index: 0;
+    &:last-child {
+      margin-bottom: 2.5em;
+    }
+  }
+  .img-gridtitle {
+    position: absolute;
+    bottom: 20%;
+    left: 16px;
+    z-index: 199;
+    color: white;
+  }
+
+  .btn {
+    padding: 0.5em 2em;
+    background-color: white;
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    border: 1px solid $very-dark-grey;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+.img-gridItem {
+  isolation: isolate;
+  position: relative;
+  margin-bottom: 0.5em;
+  @include large {
+    margin-bottom: 0;
+  }
+  &:hover {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: $very-dark-grey;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+    }
+  }
+}
+.desktop {
+  display: none;
+}
+
+@include medium {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 1em;
+      grid-auto-flow: row dense;
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5em;
+    }
+  }
+}
+@include large {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+footer {
+  background-color: black;
+  color: white;
+  .container {
+    padding-block: 5em;
+  }
+  nav {
+    margin-bottom: 2.5em;
+  }
+  .logo {
+    margin-bottom: 2em;
+  }
+  li {
+    margin-bottom: 1.5em;
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 30px;
+        height: 4px;
+        top: 30px;
+        left: 47%;
+        @include medium {
+          left: 25%;
+        }
+      }
+    }
+  }
+  .social-media {
+    margin-bottom: 2em;
+  }
+  .social-space {
+    margin-right: 1em;
+  }
+  h4 {
+    color: $Dark-grey;
+  }
+
+  @include medium {
+    .container {
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      .copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+    nav {
+      margin-right: 5em;
+      margin-bottom: 0;
+    }
+    ul {
+      display: flex;
+      li {
+        margin-right: 1.5em;
+      }
+    }
+  }
+}
